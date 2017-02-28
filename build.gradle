@@ -27,3 +27,15 @@ dependencies {
     compile 'org.slf4j:log4j-over-slf4j:1.7.13'
     compile 'joda-time:joda-time:2.9.7'
 }
+
+// Create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Swedbank Google Spreadsheet',
+                'Implementation-Version': version,
+                'Main-Class': 'com.github.soshibby.Main'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
