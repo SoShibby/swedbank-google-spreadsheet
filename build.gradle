@@ -12,11 +12,6 @@ repositories {
     mavenLocal()
 }
 
-task(runApplication, dependsOn: 'classes', type: JavaExec){
-    main = 'com.github.soshibby.Main'
-    classpath = sourceSets.main.runtimeClasspath
-}
-
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
     compile 'com.github.soshibby:swedbank:1.2'
