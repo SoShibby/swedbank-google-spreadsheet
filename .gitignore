@@ -1,3 +1,17 @@
+# Ignore project configurations
+config.json
+importHistory.json
+
+# Ignore gradle folder
+.gradle
+gradle
+
+# Ignore Intellij folders
+.idea
+
+# Ignore compiled code
+build
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
